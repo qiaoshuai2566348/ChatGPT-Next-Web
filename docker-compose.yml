@@ -5,26 +5,12 @@ services:
     container_name: chatgpt-next-web
     image: yidadaa/chatgpt-next-web
     ports:
-      - 3000:3000
+      - 80:80
     environment:
-      - OPENAI_API_KEY=$OPENAI_API_KEY
-      - CODE=$CODE
-      - BASE_URL=$BASE_URL
-      - OPENAI_ORG_ID=$OPENAI_ORG_ID
+      - OPENAI_API_KEY=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
+      - CODE=chat.shuye2017.com
+      - BASE_URL=https://api.openai.com
+      - OPENAI_ORG_ID=org-3aiVn6sZvwjpIZy3wNPkNDG3
       - HIDE_USER_API_KEY=$HIDE_USER_API_KEY
       - DISABLE_GPT4=$DISABLE_GPT4
 
-  chatgpt-next-web-proxy: 
-    profiles: ["proxy"]
-    container_name: chatgpt-next-web-proxy
-    image: yidadaa/chatgpt-next-web
-    ports:
-      - 3000:3000
-    environment:
-      - OPENAI_API_KEY=$OPENAI_API_KEY
-      - CODE=$CODE
-      - PROXY_URL=$PROXY_URL
-      - BASE_URL=$BASE_URL
-      - OPENAI_ORG_ID=$OPENAI_ORG_ID
-      - HIDE_USER_API_KEY=$HIDE_USER_API_KEY
-      - DISABLE_GPT4=$DISABLE_GPT4
